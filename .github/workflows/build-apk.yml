@@ -5,6 +5,11 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# Keep only the newest build running for this workflow.
+concurrency:
+  group: android-apk-build
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
